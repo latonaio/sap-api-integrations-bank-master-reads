@@ -1,0 +1,24 @@
+{
+	"connection_key": "response",
+	"result": true,
+	"redis_key": "abcdefg",
+	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
+	"Bank": {
+		"BankCountry": "DE",
+		"Bank": "00010001",
+		"BankInternalID": "",
+		"BankName": "",
+		"Region": "",
+		"ShortStreetName": "",
+		"ShortCityName": "",
+		"SWIFTCode": "",
+		"BankNetworkGrouping": "",
+		"IsMarkedForDeletion": "",
+		"BankBranch": "",
+		"BankCategory": ""
+	},
+	"api_schema": "Bank",
+	"accepter": ["Bank"],
+	"bank_code": "00010001",
+	"deleted": false
+}
