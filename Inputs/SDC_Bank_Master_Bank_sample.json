@@ -3,9 +3,9 @@
 	"result": true,
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
-	"Bank": {
-		"BankCountry": "DE",
-		"Bank": "00010001",
+	"bank": {
+		"BankCountry": "JP",
+		"Bank": "0001001",
 		"BankInternalID": "",
 		"BankName": "",
 		"Region": "",
@@ -19,6 +19,6 @@
 	},
 	"api_schema": "Bank",
 	"accepter": ["Bank"],
-	"bank_code": "00010001",
+	"bank_code": "0001001",
 	"deleted": false
 }

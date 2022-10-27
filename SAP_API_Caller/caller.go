@@ -57,8 +57,8 @@ func (c *SAPAPICaller) Bank(bankCountry, bank string) {
 }
 
 func (c *SAPAPICaller) callBankSrvAPIRequirementBank(api, bankCountry, bank string) ([]sap_api_output_formatter.Bank, error) {
-	url := strings.Join([]string{c.baseURL, "api_bank/srvd_a2x/sap/bank/0002", api}, "/")
-	param := c.getQueryWithBank(map[string]string{}, bankCountry, bank)
+	url := strings.Join([]string{c.baseURL, "api_bank/srvd_a2x/sap/api_bank_2/0001", api}, "/")
+	param := c.getQueryWithBank(c.addQuerySAPClient(map[string]string{}), bankCountry, bank)
 
 	resp, err := c.requestClient.Request("GET", url, param, "")
 	if err != nil {
@@ -79,5 +79,13 @@ func (c *SAPAPICaller) getQueryWithBank(params map[string]string, bankCountry, b
 		params = make(map[string]string, 1)
 	}
 	params["$filter"] = fmt.Sprintf("BankCountry eq '%s' and Bank eq '%s'", bankCountry, bank)
+	return params
+}
+
+func (c *SAPAPICaller) addQuerySAPClient(params map[string]string) map[string]string {
+	if len(params) == 0 {
+		params = make(map[string]string, 1)
+	}
+	params["sap-client"] = c.sapClientNumber
 	return params
 }
